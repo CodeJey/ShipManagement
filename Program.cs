@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Threading.Tasks;
@@ -35,7 +35,7 @@ namespace ShipManagement
                 switch(nextAc.Trim())
                 {
                     case "1": 
-                        Scrape(); 
+                        Scrape();
                             break;
                     case "2": 
                         PrintRegister();
