@@ -1,0 +1,43 @@
+~~~~
+Port Name: IGOUMENITSA
+Port number(MarineTraffic): 77
+Country: Greece
+Coordinates: 39.5018° / 20.2463°
+All the ships on the port on 2021-04-09 14:12 are: 4
+Un/lcode: GRIGO
+~~~~
+Port Name: BRINDISI
+Port number(MarineTraffic): 639
+Country: Italy
+Coordinates: 40.64812° / 17.959535°
+All the ships on the port on 2021-04-09 14:12 are: 22
+Un/lcode: ITBDS
+~~~~
+Port Name: BURGAS
+Port number(MarineTraffic): 732
+Country: Bulgaria
+Coordinates: 42.459295° / 27.489835°
+All the ships on the port on 2021-04-09 14:12 are: 29
+Un/lcode: BGBOJ
+~~~~
+Port Name: PALMA
+Port number(MarineTraffic): 75
+Country: Spain
+Coordinates: 39.55724° / 2.6323715°
+All the ships on the port on 2021-04-09 14:12 are: 235
+Un/lcode: ESPMI
+~~~~
+Port Name: KIATO
+Port number(MarineTraffic): 78
+Country: Greece
+Coordinates: 38.01267° / 22.75323°
+All the ships on the port on 2021-04-09 14:12 are: 0
+Un/lcode: GRKIO
+~~~~
+Port Name: CORFU
+Port number(MarineTraffic): 76
+Country: Greece
+Coordinates: 39.62925° / 19.90909°
+All the ships on the port on 2021-04-09 14:13 are: 11
+Un/lcode: GRCFU
+~~~~
