@@ -41,7 +41,7 @@ shipsOnThePortCount = soup.find('div', class_= 'bg-info bg-light padding-10 radi
 # отваряне на файла
 file = open("pD.txt", "a")
 # Вземаме само името на пристанището
-file.write('Port Name: ' + str(portName).split(' ')[0] + '\n')
+file.write('Port Name: ' + str(portName).replace(portName.split(' ')[len(portName.split(' ')) - 1], '') + '\n')
 # Ще му изписваме и кода, който сме въвели
 file.write('Port number(MarineTraffic)' + ': ' + portNumber + '\n')
 # страна
