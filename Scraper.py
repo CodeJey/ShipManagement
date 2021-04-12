@@ -30,10 +30,12 @@ try:
 except AttributeError:
    sys.exit("Not a port number.")
 
+shipURL = 'https://www.marinetraffic.com/bg/data/?asset_type=vessels&columns=flag,shipname,photo,recognized_next_port,reported_eta,reported_destination,current_port,imo,ship_type,show_on_live_map,time_of_latest_position,lat_of_latest_position,lon_of_latest_position,notes&current_port_in|begins|' + str(portName).split(' ')[0] + '|current_port_in=' + portNumber
 # взема се държава и колко кораба има там(не се обработва като ексепшън, защото ако намерим име ще има и другите неща)
-country = soup.find('span', class_= 'font-120').text
+country = str(soup.find('span', class_= 'font-120').text)
 # този код реално взема колко кораба са на пристанището, координати, код на пристанище и ояаквани кораби, както и точно време там
 shipsOnThePortCount = soup.find('div', class_= 'bg-info bg-light padding-10 radius-4 text-left').text
+
 
 # Тук се пише във файла
 # отваряне на файла
@@ -43,9 +45,9 @@ file.write('Port Name: ' + str(portName).split(' ')[0] + '\n')
 # Ще му изписваме и кода, който сме въвели
 file.write('Port number(MarineTraffic)' + ': ' + portNumber + '\n')
 # страна
-file.write('Country: ' + str(country).split(' ')[1] + '\n')
+file.write('Country:' + country.replace(country.split(' ')[0], '') + '\n')
 # координатите се обработват и пишат 
-file.write('Coordinates: ' + (str(shipsOnThePortCount).replace('\n', '~')).split('~')[3] + '\n')
+file.write('Coordinates(w/l): ' + ((str(shipsOnThePortCount).replace('\n', '~')).split('~')[3]).replace("°", "deg") + '\n')
 # брой кораби се обработва и пише
 file.write('All the ships on the port on '+ (str(datetime.datetime.now()).split(':')[0] + ':' + str(datetime.datetime.now()).split(':')[1]) + ' are: ' + (str(shipsOnThePortCount).replace('\n', '~')).split('~')[18] + '\n')
 # Кода се добавя
@@ -54,3 +56,5 @@ file.write('Un/lcode: ' + (str(shipsOnThePortCount).replace('\n', '~')).split('~
 file.write('~~~~' + '\n')
 # затваряме файла
 file.close()
+
+# webbrowser.open_new_tab(shipURL)
