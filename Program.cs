@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Threading.Tasks;
@@ -80,12 +80,21 @@ namespace ShipManagement
         // Тук извикваме скрипта, който ще scrape-ва страницата
         public static void Scrape()
         {
+            OperatingSystem os = Environment.OSVersion;
             //Пита за номер на пристанище който скрипта си го чете
             Console.Write("Enter port number: ");
             //започва приготовлението, обработката и изпълнението на процеса около скрипта
             ProcessStartInfo start = new ProcessStartInfo();
-            start.FileName = "python3.9.exe";
-            start.Arguments = string.Format("Scraper.py cmd.exe");
+            if (os.Platform.ToString() == "Unix")
+            {
+                start.FileName = "python3";
+                start.Arguments = string.Format("Scraper.py Terminal");
+            }
+            else 
+            {
+                start.FileName = "python3.9.exe";
+                start.Arguments = string.Format("Scraper.py cmd.exe");
+            }
             start.UseShellExecute = false;
             start.RedirectStandardOutput = true;
             using(Process process = Process.Start(start))
